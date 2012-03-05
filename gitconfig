@@ -1,0 +1,21 @@
+[user]
+	name = Pascal Immerzeel
+	email = pascal.immerzeel@dpdk.nl
+[color]
+	ui = auto
+[advice]
+	pushNonFastForward = false
+	statusHints = false
+[diff]
+	renames = copies
+	mnemonicprefix = true
+[branch]
+	autosetupmerge = true
+[push]
+	default = tracking
+[rerere]
+	enabled = true
+[merge]
+	stat = true
+[core]
+	autocrlf = input

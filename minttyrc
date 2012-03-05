@@ -1,0 +1,16 @@
+BoldAsFont=no
+CursorType=underscore
+Font=Consolas
+FontHeight=12
+FontSmoothing=full
+BoldAsColour=no
+BackgroundColour=0,0,0
+Transparency=medium
+Printer=Adobe PDF
+OpaqueWhenFocused=yes
+Term=xterm-256color
+Scrollbar=none
+Locale=C
+Charset=UTF-8
+Columns=128
+Rows=35
