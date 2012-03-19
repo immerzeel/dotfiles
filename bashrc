@@ -43,7 +43,12 @@ alias lr='ls -lR'          # recursive ls
 
 
 alias mkdir='mkdir -p'
-# }
+
+# Grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
 # Git
 alias g='git'
 alias gs='git status'
@@ -53,7 +58,7 @@ function gg() {
     git commit -v -a -m "$*"
 }
 
-# Bash {
+# Bash
 alias ,eb='${EDITOR} ~/dotfiles/bashrc && source ~/dotfiles/bashrc'
 alias bstats='f() { history|cut -d\  -f4-5|sort|uniq -c|sort -rn|head -${1:-30}; }; f'
 alias path='echo -e ${PATH//:/\\n}'
