@@ -32,5 +32,11 @@ plugins=(git command-coloring)
 
 source $ZSH/oh-my-zsh.sh
 
+# Pre-prompt command
+source $HOME/dotfiles/scripts/z.sh
+function precmd() {
+    z --add "$(pwd -P)"
+}
+
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Applications/
+export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/Applications/
