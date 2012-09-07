@@ -3,24 +3,21 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="blinks"
 
 export EDITOR=vim
-export SVN_EDITOR=$EDITOR
+export SS_DISPLAY_LIMIT=25
+export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/Applications/
 
 # Aliases
 alias ez="$EDITOR ~/.zshrc"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git command-coloring brew svn)
+plugins=(git command-coloring brew svn regex-dirstack vim-interaction)
 
 source $ZSH/oh-my-zsh.sh
-
-# Pre-prompt command
-source $HOME/dotfiles/scripts/z.sh
+source $HOME/dotfiles/scripts/z.sh # Pre-prompt command
 function precmd() {
     z --add "$(pwd -P)"
 }
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/Applications/
