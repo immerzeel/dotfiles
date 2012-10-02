@@ -4,7 +4,7 @@ ZSH_THEME="blinks"
 
 export EDITOR=vim
 export SS_DISPLAY_LIMIT=25
-export PATH=/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/Applications/
+export PATH=~/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/Applications/
 
 # Aliases
 alias ez="$EDITOR ~/.zshrc"
