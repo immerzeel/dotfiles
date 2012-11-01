@@ -16,7 +16,12 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git command-coloring brew svn regex-dirstack vim-interaction)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/dotfiles/scripts/z.sh # Pre-prompt command
+
+# Disable autocorrect.
+unsetopt correctall
+
+# Add the 'z' command to enhance jumping between commonly used directories.
+source $HOME/dotfiles/scripts/z.sh
 function precmd() {
     z --add "$(pwd -P)"
 }
