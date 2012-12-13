@@ -13,7 +13,7 @@ alias ez="$EDITOR ~/.zshrc"
 COMPLETION_WAITING_DOTS="true"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git command-coloring brew svn regex-dirstack vim-interaction)
+plugins=(git brew svn vi-mode forklift rsync)
 
 source $ZSH/oh-my-zsh.sh
 
