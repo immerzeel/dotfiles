@@ -29,8 +29,8 @@ bind down:ctrl;alt;cmd   push down  bar-resize:screenSizeY/2
 # bind 1:ctrl;alt         throw 0 resize
 # bind 2:ctrl;alt         throw 1 resize
 # bind 3:ctrl;alt         throw 2 resize
-bind right:ctrl;alt throw right
-bind left:ctrl;alt  throw left 
+bind right:ctrl;alt throw right resize
+bind left:ctrl;alt  throw left resize 
 
 # Focus Bindings
 # bind right:cmd    focus right
