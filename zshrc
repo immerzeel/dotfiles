@@ -26,3 +26,7 @@ function precmd() {
     z --add "$(pwd -P)"
 }
 
+# Allow multi-rename in shell.
+# Usage: mmv *.snippets.txt *.snippets
+autoload -U zmv
+alias mmv='noglob zmv -W'
