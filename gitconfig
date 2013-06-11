@@ -19,3 +19,5 @@
 	stat = true
 [core]
 	autocrlf = input
+[url "https://"]
+	insteadOf = git://
