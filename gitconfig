@@ -1,6 +1,6 @@
 [user]
 	name = Pascal Immerzeel
-	email = pascal@immerzeel.net
+	email = pascal@immerzeelpictures.com
 [color]
 	ui = auto
 [advice]
@@ -12,6 +12,7 @@
 	renames = copies
 	mnemonicprefix = true
 	algorithm = patience
+  tool = vimdiff
 [branch]
 	autosetupmerge = true
 [push]
