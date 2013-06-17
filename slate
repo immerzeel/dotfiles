@@ -1,24 +1,55 @@
+# Config {{{1
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
-# Resize Bindings
-bind m:ctrl;alt;cmd    corner top-left resize:screenSizeX;screenSizeY
-bind pad5:ctrl;alt;cmd    move screenSizeX/4;screenSizeY/4 screenSizeX/2;screenSizeY/2
-bind pad7:ctrl;alt;cmd    corner top-left resize:screenSizeX/2;screenSizeY/2
-bind pad9:ctrl;alt;cmd    corner top-right resize:screenSizeX/2;screenSizeY/2
-bind pad1:ctrl;alt;cmd    corner bottom-left resize:screenSizeX/2;screenSizeY/2
-bind pad3:ctrl;alt;cmd    corner bottom-right resize:screenSizeX/2;screenSizeY/2
-
-# Push Bindings
-bind right:ctrl;alt;cmd  push right bar-resize:screenSizeX/2
-bind left:ctrl;alt;cmd   push left  bar-resize:screenSizeX/2
-bind up:ctrl;alt;cmd     push up    bar-resize:screenSizeY/2
-bind down:ctrl;alt;cmd   push down  bar-resize:screenSizeY/2
-
-# Throw Bindings
-bind right:ctrl;alt throw right resize
-bind left:ctrl;alt  throw left resize 
-
 # Window Hints
 bind esc:cmd hint
+
+# Alias {{{1
+alias 4-mod ctrl;shift;alt;cmd
+alias 3-mod ctrl;alt;cmd
+alias 2-mod ctrl;alt
+
+alias full      move screenOriginX;screenOriginY               screenSizeX;screenSizeY
+alias lefthalf  move screenOriginX;screenOriginY               screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+
+alias thirdleft  move screenOriginX;screenOriginY                 screenSizeX/3;screenSizeY
+alias thirdmid   move screenOriginX+screenSizeX/3;screenOriginY   screenSizeX/3;screenSizeY
+alias thirdright move screenOriginX+2*screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY
+
+alias bigleft  move screenOriginX;screenOriginY               2*screenSizeX/3;screenSizeY
+alias bigmid   move screenOriginX+screenSizeX/6;screenOriginY 2*screenSizeX/3;screenSizeY
+alias bigright move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY
+
+# Layout {{{1
+# Default {{{1
+# Bind {{{1
+# Focus {{{2
+
+# bind l:ctrl:cmd focus right
+# bind h:ctrl:cmd focus left
+# bind k:ctrl:cmd focus up
+# bind j:ctrl:cmd focus down
+# bind b:ctrl:cmd focus behind
+# bind f:ctrl:cmd focus behind
+
+# Resize {{{2
+bind pad1:${3-mod} ${bigleft}
+bind pad2:${3-mod} ${bigmid}
+bind pad3:${3-mod} ${bigright}
+bind pad4:${3-mod} ${lefthalf}
+bind m:${3-mod} ${full}
+bind pad5:${3-mod} ${full}
+bind pad6:${3-mod} ${righthalf}
+bind pad7:${3-mod} ${thirdleft}
+bind pad8:${3-mod} ${thirdmid}
+bind pad9:${3-mod} ${thirdright}
+
+# Push {{{2
+# Throw({{2
+bind right:${2-mod} throw right resize
+bind left:${2-mod}  throw left resize
+
+# Source {{{1
