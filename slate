@@ -32,19 +32,19 @@ alias laptop 0
 alias screen1 1
 alias screen2 2
 
-alias mail 'Postbox'
-alias editor 'iTerm'
-alias browser 'Google Chrome'
-alias todo 'Evernote'
-alias music 'Spotify'
+alias postbox 'Postbox'
+alias vim 'iTerm'
+alias chrome 'Google Chrome'
+alias evernote 'Evernote'
+alias spotify 'Spotify'
 
 # Layout {{{1
 default threeScreen resolutions:${laptop};${screen1};${screen2};
-layout threeScreen ${mail} ${full} ${laptop}
-layout threeScreen ${todo}:MAIN_FIRST ${full} ${laptop}
-layout threeScreen ${music} ${full} ${laptop}
-layout threeScreen ${editor} ${full} ${screen1}
-layout threeScreen ${browser}:REPEAT ${full} ${screen2}
+layout threeScreen ${postbox} ${full} ${laptop}
+layout threeScreen ${evernote}:MAIN_FIRST ${full} ${laptop}
+layout threeScreen ${spotify} ${full} ${laptop}
+layout threeScreen ${vim} ${full} ${screen1}
+layout threeScreen ${chrome}:REPEAT ${full} ${screen2}
 
 bind 3:ctrl layout threeScreen
 
@@ -54,9 +54,10 @@ bind esc:cmd hint # Window Hints
 bind g:${4-mod} grid padding:5 0:4,2 1:2,2 2:2,2
 
 # Focus {{{2
-bind i:${4-mod} focus ${editor}
-bind p:${4-mod} focus ${mail}
-bind s:${4-mod} focus ${music}
+bind v:${4-mod} focus ${vim}
+bind m:${4-mod} focus ${postbox}
+bind s:${4-mod} focus ${spotify}
+bind e:${4-mod} focus ${evernote}
 
 bind right:${4-mod} focus right
 bind left:${4-mod} focus left
