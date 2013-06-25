@@ -9,6 +9,7 @@
 [diff]
 	renames = copies
 	mnemonicprefix = true
+	algorithm = patience
 [branch]
 	autosetupmerge = true
 [push]
