@@ -21,10 +21,8 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correctall
 
 # Add the 'z' command to enhance jumping between commonly used directories.
-source $HOME/dotfiles/scripts/z.sh
-function precmd() {
-    z --add "$(pwd -P)"
-}
+# Install via `brew install z`
+source `brew --prefix`/etc/profile.d/z.sh
 
 # Allow multi-rename in shell.
 # Usage: mmv *.snippets.txt *.snippets
