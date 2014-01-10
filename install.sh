@@ -4,7 +4,9 @@ FILES="bash_profile \
        ctags \
        gitconfig \
        profile \
+       jshintrc \
        rsyncignore \
+       tmux.conf \
        zprofile \
        zshrc"
 
