@@ -12,17 +12,16 @@ alias ez="$EDITOR ~/.zshrc"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+# Uncomment following line if you want to disable colors in ls
+DISABLE_LS_COLORS="true"
+
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew svn forklift rsync)
+plugins=(git z git-flow tmux)
 
 source $ZSH/oh-my-zsh.sh
 
 # Disable autocorrect.
 unsetopt correctall
-
-# Add the 'z' command to enhance jumping between commonly used directories.
-# Install via `brew install z`
-source `brew --prefix`/etc/profile.d/z.sh
 
 # Allow multi-rename in shell.
 # Usage: mmv *.snippets.txt *.snippets
