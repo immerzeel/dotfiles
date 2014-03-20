@@ -8,6 +8,7 @@ ZSH_THEME="blinks"
 
 # Aliases
 alias ez="$EDITOR ~/.zshrc"
+alias algr="alias | grep $1" # Learn the alias shortkeys
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
