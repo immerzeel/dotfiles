@@ -20,5 +20,6 @@
 	stat = true
 [core]
 	autocrlf = input
+	excludesfile = ~/.gitignore
 [url "https://"]
 	insteadOf = git://

@@ -3,8 +3,9 @@ FILES_PATH=~/dotfiles
 FILES="bash_profile \
        ctags \
        gitconfig \
-       profile \
+       gitignore \
        jshintrc \
+       profile \
        rsyncignore \
        tmux.conf \
        zprofile \
