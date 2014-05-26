@@ -6,6 +6,8 @@
 [advice]
 	pushNonFastForward = false
 	statusHints = false
+[credential]
+	helper = cache --timeout=28800
 [diff]
 	renames = copies
 	mnemonicprefix = true
