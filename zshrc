@@ -7,8 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="blinks"
 
 # Aliases
-alias ez="$EDITOR ~/.zshrc"
-alias algr="alias | grep $1" # Learn the alias shortkeys
+alias ez="$EDITOR ~/.zshrc" # Quick edit the zsh config file.
+alias algr="alias | grep" # Learn the alias shortkey.
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
@@ -17,7 +17,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_LS_COLORS="true"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git z git-flow tmux)
+plugins=(git z git-flow tmux tmuxinator gitignore)
 
 source $ZSH/oh-my-zsh.sh
 
