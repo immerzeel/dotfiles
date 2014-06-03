@@ -6,15 +6,19 @@
 # touch ~/.mutt/certificates
 
 # Change the following six lines to match your Gmail account details
-set imap_user = "immerzeelpictures@gmail.com"
-set imap_pass = ""
-set smtp_url = "smtp://immerzeelpictures@smtp.gmail.com:587/"
-set smtp_pass = ""
+set imap_user = "pascal@immerzeelpictures.com"
+# set imap_pass = "" // Password is set in .muttrc.private
+set smtp_url = "smtp://pascal@immerzeelpictures.com@smtp.gmail.com:587/"
+# set smtp_pass = "" // Password is set in .muttrc.private
 set from = "pascal@immerzeelpictures.com"
 set realname = "Pascal Immerzeel"
 
+# Import passwords fo IMAP & SMTP.
+source ~/.muttrc.private
+
 # Change the following line to a different editor you prefer.
 set editor = "vim"
+set edit_headers = yes
 
 # Basic config, you can leave this as is
 set folder = "imaps://imap.gmail.com:993"
@@ -34,6 +38,11 @@ set include
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 set auto_tag = yes
+
+# Enable search in Google Contacts
+# Install Goobook (easy_install -U goobook)
+# Setup ~/.netrc wit machine google.com / login / password
+set query_command="goobook query '%s'"
 
 ignore "Authentication-Results:"
 ignore "DomainKey-Signature:"
