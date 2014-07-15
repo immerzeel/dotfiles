@@ -21,6 +21,7 @@
 	enabled = true
 [merge]
 	stat = true
+	conflictstyle = diff3
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore
