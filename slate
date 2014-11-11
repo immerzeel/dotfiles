@@ -30,23 +30,27 @@ alias bigright move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;sc
 
 alias laptop 0
 alias screen1 1
-alias screen2 2
 
 alias postbox 'Postbox'
 alias vim 'iTerm'
 alias chrome 'Google Chrome'
+alias firefox 'Firefox'
 alias evernote 'Evernote'
 alias spotify 'Spotify'
 
 # Layout {{{1
-default threeScreen resolutions:${laptop};${screen1};${screen2};
-layout threeScreen ${postbox} ${full} ${laptop}
-layout threeScreen ${evernote}:MAIN_FIRST ${full} ${laptop}
-layout threeScreen ${spotify} ${full} ${laptop}
-layout threeScreen ${vim} ${full} ${screen1}
-layout threeScreen ${chrome}:REPEAT ${full} ${screen2}
+default noteLayout resolutions:${laptop};${screen1};
+layout noteLayout ${evernote}:MAIN_FIRST ${full} ${laptop}
+layout noteLayout ${vim} ${full} ${screen1}
 
-bind 3:ctrl layout threeScreen
+bind 1:${4-mod} layout noteLayout
+
+default presentLayout resolutions:${laptop};${screen1};
+layout presentLayout ${evernote}:MAIN_FIRST ${full} ${laptop}
+layout presentLayout ${spotify} ${full} ${laptop}
+layout presentLayout ${vim} ${full} ${screen1}
+
+bind 2:${4-mod} layout presentLayout
 
 # Default {{{1
 # Bind {{{1
@@ -65,16 +69,16 @@ bind up:${4-mod} focus up
 bind down:${4-mod} focus down
 
 # Resize {{{2
-bind pad1:${3-mod} ${bigleft}
-bind pad2:${3-mod} ${bigmid}
-bind pad3:${3-mod} ${bigright}
-bind pad4:${3-mod} ${lefthalf}
+bind 1:${3-mod} ${bigleft}
+bind 2:${3-mod} ${bigmid}
+bind 3:${3-mod} ${bigright}
+bind 4:${3-mod} ${lefthalf}
 bind m:${3-mod} ${full}
-bind pad5:${3-mod} ${full}
-bind pad6:${3-mod} ${righthalf}
-bind pad7:${3-mod} ${thirdleft}
-bind pad8:${3-mod} ${thirdmid}
-bind pad9:${3-mod} ${thirdright}
+bind 5:${3-mod} ${full}
+bind 6:${3-mod} ${righthalf}
+bind 7:${3-mod} ${thirdleft}
+bind 8:${3-mod} ${thirdmid}
+bind 9:${3-mod} ${thirdright}
 
 # Push {{{2
 # Throw({{2
