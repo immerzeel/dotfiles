@@ -4,12 +4,11 @@
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="blinks"
+ZSH_THEME="af-magic"
 
 # Aliases
 alias ez="$EDITOR ~/.zshrc" # Quick edit the zsh config file.
 alias algr="alias | grep" # Learn the alias shortkey.
-alias tmux="tmux -2" # Start with tmux in 256 color mode.
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
@@ -18,7 +17,9 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_LS_COLORS="true"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras git-flow tmux tmuxinator gitignore brew brew-cask marked2 vagrant gem z)
+plugins=(git git-extras git-flow tmux tmuxinator \
+	gitignore brew brew-cask marked2 vagrant \
+	bower gem z)
 
 source $ZSH/oh-my-zsh.sh
 
