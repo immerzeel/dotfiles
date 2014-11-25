@@ -11,78 +11,116 @@ alias 4-mod ctrl;shift;alt;cmd
 alias 3-mod ctrl;alt;cmd
 alias 2-mod ctrl;alt
 
-alias full      move screenOriginX;screenOriginY               screenSizeX;screenSizeY
-alias lefthalf  move screenOriginX;screenOriginY               screenSizeX/2;screenSizeY
-alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias full  move screenOriginX;screenOriginY               screenSizeX;screenSizeY
+alias left  move screenOriginX;screenOriginY               screenSizeX/2;screenSizeY
+alias right move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
 
-alias topleft     corner top-left     resize:screenSizeX/2;screenSizeY/2
-alias topright    corner top-right    resize:screenSizeX/2;screenSizeY/2
-alias bottomleft  corner bottom-left  resize:screenSizeX/2;screenSizeY/2
-alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+alias top	   move screenOriginX;screenOriginY				screenSizeX;screenSizeY/2
+alias top-left	   move screenOriginX;screenOriginY				screenSizeX/2;screenSizeY/2
+alias top-right	   move screenOriginX+screenSizeX/2;screenOriginY		screenSizeX/2;screenSizeY/2
+alias bottom	   move screenOriginX;screenOriginY+screenSizeY/2		screenSizeX;screenSizeY/2
+alias bottom-left  move screenOriginX;screenOriginY+screenSizeY/2 		screenSizeX/2;screenSizeY/2
+alias bottom-right move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
 
-alias thirdleft  move screenOriginX;screenOriginY                 screenSizeX/3;screenSizeY
-alias thirdmid   move screenOriginX+screenSizeX/3;screenOriginY   screenSizeX/3;screenSizeY
-alias thirdright move screenOriginX+2*screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY
+alias third-left  move screenOriginX;screenOriginY                 screenSizeX/3;screenSizeY
+alias third-mid   move screenOriginX+screenSizeX/3;screenOriginY   screenSizeX/3;screenSizeY
+alias third-right move screenOriginX+2*screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY
 
-alias bigleft  move screenOriginX;screenOriginY               2*screenSizeX/3;screenSizeY
-alias bigmid   move screenOriginX+screenSizeX/6;screenOriginY 2*screenSizeX/3;screenSizeY
-alias bigright move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY
+# Aliases used in the Layout and Binding sections.
 
-alias laptop 0
-alias screen1 1
+# Available screens
+alias first-screen 1
+alias second-screen 0
 
+# Applications.
 alias postbox 'Postbox'
-alias vim 'iTerm'
+alias iterm 'iTerm'
 alias chrome 'Google Chrome'
 alias firefox 'Firefox'
+alias safari 'Safari'
 alias evernote 'Evernote'
 alias spotify 'Spotify'
+alias citrix 'Citrix Receiver'
 
 # Layout {{{1
-default noteLayout resolutions:${laptop};${screen1};
-layout noteLayout ${evernote}:MAIN_FIRST ${full} ${laptop}
-layout noteLayout ${vim} ${full} ${screen1}
+layout mono ${firefox}    ${full} ${first-screen}
+layout mono ${chrome}     ${full} ${first-screen}
+layout mono ${safari}     ${full} ${first-screen}
+layout mono ${evernote}   ${full} ${first-screen}
+layout mono ${postbox}    ${full} ${first-screen}
+layout mono ${spotify}    ${full} ${first-screen}
+layout mono ${iterm}      ${full} ${first-screen}
+layout mono ${citrix}     ${full} ${first-screen}
 
-bind 1:${4-mod} layout noteLayout
+layout dual ${firefox}    ${full} ${first-screen}
+layout dual ${chrome}     ${full} ${first-screen}
+layout dual ${safari}     ${full} ${first-screen}
+layout dual ${evernote}   ${full} ${first-screen}
+layout dual ${postbox}    ${full} ${first-screen}
+layout dual ${spotify}    ${full} ${first-screen}
+layout dual ${iterm}      ${full} ${second-screen}
+layout dual ${citrix}     ${full} ${second-screen}
 
-default presentLayout resolutions:${laptop};${screen1};
-layout presentLayout ${evernote}:MAIN_FIRST ${full} ${laptop}
-layout presentLayout ${spotify} ${full} ${laptop}
-layout presentLayout ${vim} ${full} ${screen1}
+# Custom Layouts
+# First hide all windows before showing the selected apps.
 
-bind 2:${4-mod} layout presentLayout
+layout develop BEFORE hide all
+layout develop BEFORE show ${iterm},${safari},${firefox}
+layout develop ${safari} ${left} ${first-screen}
+layout develop ${firefox} ${right} ${first-screen}
+layout develop ${iterm} ${full} ${second-screen}
+
+layout internet BEFORE hide all
+layout internet BEFORE show ${evernote},${firefox}
+layout internet ${evernote} ${full} ${first-screen}
+layout internet ${firefox} ${full} ${second-screen}
+
+layout citrix BEFORE hide all
+layout citrix BEFORE show ${evernote},${citrix}
+layout citrix ${evernote} ${full} ${first-screen}
+layout citrix ${citrix} ${full} ${second-screen}
+
+layout presentation BEFORE hide all
+layout presentation BEFORE show ${evernote}
+layout presentation ${evernote} ${full} ${first-screen}
 
 # Default {{{1
+default mono count:1
+default dual count:2
+
 # Bind {{{1
-bind esc:cmd hint # Window Hints
+bind 1:${4-mod} layout develop
+bind 2:${4-mod} layout internet
+bind 3:${4-mod} layout citrix
+bind 4:${4-mod} layout presentation
+
 bind g:${4-mod} grid padding:5 0:4,2 1:2,2 2:2,2
 
 # Focus {{{2
-bind v:${4-mod} focus ${vim}
-bind m:${4-mod} focus ${postbox}
+bind i:${4-mod} focus ${iterm}
 bind s:${4-mod} focus ${spotify}
 bind e:${4-mod} focus ${evernote}
 
-bind right:${4-mod} focus right
-bind left:${4-mod} focus left
-bind up:${4-mod} focus up
-bind down:${4-mod} focus down
+bind h:${4-mod} focus left
+bind j:${4-mod} focus down
+bind k:${4-mod} focus up
+bind l:${4-mod} focus right
+bind b:${4-mod} focus behind
+
+bind tab:cmd switch
 
 # Resize {{{2
-bind 1:${3-mod} ${bigleft}
-bind 2:${3-mod} ${bigmid}
-bind 3:${3-mod} ${bigright}
-bind 4:${3-mod} ${lefthalf}
 bind m:${3-mod} ${full}
-bind 5:${3-mod} ${full}
-bind 6:${3-mod} ${righthalf}
-bind 7:${3-mod} ${thirdleft}
-bind 8:${3-mod} ${thirdmid}
-bind 9:${3-mod} ${thirdright}
+bind h:${3-mod} ${left}
+bind j:${3-mod} ${bottom}
+bind k:${3-mod} ${top}
+bind l:${3-mod} ${right}
 
-# Push {{{2
+bind 1:${3-mod} ${third-left}
+bind 2:${3-mod} ${third-mid}
+bind 3:${3-mod} ${third-right}
+bind 4:${3-mod} chain ${top-left} | ${top-right} | ${bottom-right} | ${bottom-left}
+
 # Throw({{2
 bind right:${2-mod} throw right resize
-bind left:${2-mod}  throw left resize
-
-# Source {{{1
+bind left:${2-mod}  throw left  resize
