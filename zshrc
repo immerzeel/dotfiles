@@ -4,11 +4,12 @@
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="af-magic"
+ZSH_THEME="agnoster"
 
 # Aliases
 alias ez="$EDITOR ~/.zshrc" # Quick edit the zsh config file.
 alias algr="alias | grep" # Learn the alias shortkey.
+alias tmux='tmux -u' # Handle unicode characters the right way.
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
