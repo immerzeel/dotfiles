@@ -41,6 +41,7 @@ alias safari 'Safari'
 alias evernote 'Evernote'
 alias spotify 'Spotify'
 alias citrix 'Citrix Viewer'
+alias slack 'Slack'
 
 # Layout {{{1
 # This will be the default layout if a change in monitor setup is
@@ -49,23 +50,25 @@ alias citrix 'Citrix Viewer'
 # this is instantiated by these settings in the Default section:
 # default mono count:1
 # default dual count:2
-layout mono ${firefox}    ${full}  ${first-screen}
-layout mono ${chrome}     ${full}  ${first-screen}
-layout mono ${safari}     ${full}  ${first-screen}
-layout mono ${evernote}   ${full}  ${first-screen}
-layout mono ${postbox}    ${left}  ${first-screen}
-layout mono ${spotify}    ${right} ${first-screen}
-layout mono ${iterm}      ${full}  ${first-screen}
-layout mono ${citrix}     ${full}  ${first-screen}
+layout mono ${firefox}    ${full}        ${first-screen}
+layout mono ${chrome}     ${full}        ${first-screen}
+layout mono ${safari}     ${full}        ${first-screen}
+layout mono ${evernote}   ${full}        ${first-screen}
+layout mono ${postbox}    ${left}        ${first-screen}
+layout mono ${spotify}    ${right}       ${first-screen}
+layout mono ${iterm}      ${full}        ${first-screen}
+layout mono ${citrix}     ${full}        ${first-screen}
+layout mono ${slack}     ${third-right}  ${first-screen}
 
-layout dual ${firefox}    ${full}  ${first-screen}
-layout dual ${chrome}     ${full}  ${first-screen}
-layout dual ${safari}     ${full}  ${first-screen}
-layout dual ${evernote}   ${full}  ${first-screen}
-layout dual ${postbox}    ${left}  ${first-screen}
-layout dual ${spotify}    ${right} ${first-screen}
-layout dual ${iterm}      ${full}  ${second-screen}
-layout dual ${citrix}     ${full}  ${second-screen}
+layout dual ${firefox}    ${full}        ${first-screen}
+layout dual ${chrome}     ${full}        ${first-screen}
+layout dual ${safari}     ${full}        ${first-screen}
+layout dual ${evernote}   ${full}        ${first-screen}
+layout dual ${postbox}    ${left}        ${first-screen}
+layout dual ${spotify}    ${right}       ${first-screen}
+layout dual ${iterm}      ${full}        ${second-screen}
+layout dual ${citrix}     ${full}        ${second-screen}
+layout mono ${slack}     ${third-right}  ${first-screen}
 
 # Custom Layouts
 # First hide all windows before showing the selected apps.
