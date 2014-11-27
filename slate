@@ -7,6 +7,7 @@ config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
 # Alias {{{1
+# The keyboard modifiers used to bind the keys to.
 alias 4-mod ctrl;shift;alt;cmd
 alias 3-mod ctrl;alt;cmd
 alias 2-mod ctrl;alt
@@ -19,7 +20,7 @@ alias top	   move screenOriginX;screenOriginY				screenSizeX;screenSizeY/2
 alias top-left	   move screenOriginX;screenOriginY				screenSizeX/2;screenSizeY/2
 alias top-right	   move screenOriginX+screenSizeX/2;screenOriginY		screenSizeX/2;screenSizeY/2
 alias bottom	   move screenOriginX;screenOriginY+screenSizeY/2		screenSizeX;screenSizeY/2
-alias bottom-left  move screenOriginX;screenOriginY+screenSizeY/2 		screenSizeX/2;screenSizeY/2
+alias bottom-left  move screenOriginX;screenOriginY+screenSizeY/2		screenSizeX/2;screenSizeY/2
 alias bottom-right move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
 
 alias third-left  move screenOriginX;screenOriginY                 screenSizeX/3;screenSizeY
@@ -27,7 +28,6 @@ alias third-mid   move screenOriginX+screenSizeX/3;screenOriginY   screenSizeX/3
 alias third-right move screenOriginX+2*screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY
 
 # Aliases used in the Layout and Binding sections.
-
 # Available screens
 alias first-screen 1
 alias second-screen 0
@@ -40,30 +40,35 @@ alias firefox 'Firefox'
 alias safari 'Safari'
 alias evernote 'Evernote'
 alias spotify 'Spotify'
-alias citrix 'Citrix Receiver'
+alias citrix 'Citrix Viewer'
 
 # Layout {{{1
-layout mono ${firefox}    ${full} ${first-screen}
-layout mono ${chrome}     ${full} ${first-screen}
-layout mono ${safari}     ${full} ${first-screen}
-layout mono ${evernote}   ${full} ${first-screen}
-layout mono ${postbox}    ${full} ${first-screen}
-layout mono ${spotify}    ${full} ${first-screen}
-layout mono ${iterm}      ${full} ${first-screen}
-layout mono ${citrix}     ${full} ${first-screen}
+# This will be the default layout if a change in monitor setup is
+# detected. Slate will automatically initiate this setup.
+#
+# this is instantiated by these settings in the Default section:
+# default mono count:1
+# default dual count:2
+layout mono ${firefox}    ${full}  ${first-screen}
+layout mono ${chrome}     ${full}  ${first-screen}
+layout mono ${safari}     ${full}  ${first-screen}
+layout mono ${evernote}   ${full}  ${first-screen}
+layout mono ${postbox}    ${left}  ${first-screen}
+layout mono ${spotify}    ${right} ${first-screen}
+layout mono ${iterm}      ${full}  ${first-screen}
+layout mono ${citrix}     ${full}  ${first-screen}
 
-layout dual ${firefox}    ${full} ${first-screen}
-layout dual ${chrome}     ${full} ${first-screen}
-layout dual ${safari}     ${full} ${first-screen}
-layout dual ${evernote}   ${full} ${first-screen}
-layout dual ${postbox}    ${full} ${first-screen}
-layout dual ${spotify}    ${full} ${first-screen}
-layout dual ${iterm}      ${full} ${second-screen}
-layout dual ${citrix}     ${full} ${second-screen}
+layout dual ${firefox}    ${full}  ${first-screen}
+layout dual ${chrome}     ${full}  ${first-screen}
+layout dual ${safari}     ${full}  ${first-screen}
+layout dual ${evernote}   ${full}  ${first-screen}
+layout dual ${postbox}    ${left}  ${first-screen}
+layout dual ${spotify}    ${right} ${first-screen}
+layout dual ${iterm}      ${full}  ${second-screen}
+layout dual ${citrix}     ${full}  ${second-screen}
 
 # Custom Layouts
 # First hide all windows before showing the selected apps.
-
 layout develop BEFORE hide all
 layout develop BEFORE show ${iterm},${safari},${firefox}
 layout develop ${safari} ${left} ${first-screen}
@@ -106,8 +111,6 @@ bind j:${4-mod} focus down
 bind k:${4-mod} focus up
 bind l:${4-mod} focus right
 bind b:${4-mod} focus behind
-
-bind tab:cmd switch
 
 # Resize {{{2
 bind m:${3-mod} ${full}
