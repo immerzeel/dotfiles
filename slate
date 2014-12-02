@@ -72,23 +72,23 @@ layout mono ${slack}     ${third-right}  ${first-screen}
 
 # Custom Layouts
 # First hide all windows before showing the selected apps.
-layout develop BEFORE hide all
+layout develop BEFORE hide all-but:${iterm},${safari},${firefox}
 layout develop BEFORE show ${iterm},${safari},${firefox}
-layout develop ${safari} ${left} ${first-screen}
-layout develop ${firefox} ${right} ${first-screen}
+layout develop ${safari} ${right} ${first-screen}
+layout develop ${firefox} ${left} ${first-screen}
 layout develop ${iterm} ${full} ${second-screen}
 
-layout internet BEFORE hide all
+layout internet BEFORE hide all-but:${evernote},${firefox}
 layout internet BEFORE show ${evernote},${firefox}
 layout internet ${evernote} ${full} ${first-screen}
 layout internet ${firefox} ${full} ${second-screen}
 
-layout work BEFORE hide all
+layout work BEFORE hide all-but:${evernote},${citrix}
 layout work BEFORE show ${evernote},${citrix}
 layout work ${evernote} ${full} ${first-screen}
 layout work ${citrix} ${full} ${second-screen}
 
-layout presentation BEFORE hide all
+layout presentation BEFORE hide all-but:${evernote}
 layout presentation BEFORE show ${evernote}
 layout presentation ${evernote} ${full} ${first-screen}
 
