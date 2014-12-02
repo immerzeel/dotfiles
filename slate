@@ -83,10 +83,10 @@ layout internet BEFORE show ${evernote},${firefox}
 layout internet ${evernote} ${full} ${first-screen}
 layout internet ${firefox} ${full} ${second-screen}
 
-layout citrix BEFORE hide all
-layout citrix BEFORE show ${evernote},${citrix}
-layout citrix ${evernote} ${full} ${first-screen}
-layout citrix ${citrix} ${full} ${second-screen}
+layout work BEFORE hide all
+layout work BEFORE show ${evernote},${citrix}
+layout work ${evernote} ${full} ${first-screen}
+layout work ${citrix} ${full} ${second-screen}
 
 layout presentation BEFORE hide all
 layout presentation BEFORE show ${evernote}
@@ -99,7 +99,7 @@ default dual count:2
 # Bind {{{1
 bind 1:${4-mod} layout develop
 bind 2:${4-mod} layout internet
-bind 3:${4-mod} layout citrix
+bind 3:${4-mod} layout work
 bind 4:${4-mod} layout presentation
 
 bind g:${4-mod} grid padding:5 0:4,2 1:2,2 2:2,2
