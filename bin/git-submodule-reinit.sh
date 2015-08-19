@@ -7,7 +7,7 @@ do
     url_key=$(echo $path_key | sed 's/\.path/.url/')
     url=$(git config -f .gitmodules --get "$url_key")
 
-    read -p "Are you sure you want to re-initialize $path as a new submodule? " yn
+    read -p "Are you sure you want to DELETE and re-initialize '$path' as a new submodule? " yn
     case $yn in
         [Yy]* ) rm -rf $path; git submodule add $url $path; echo "$path has been initialized";;
         [Nn]* ) exit;;
