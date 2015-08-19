@@ -4,7 +4,8 @@
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="blinks"
 
 # Aliases
 alias ez="$EDITOR ~/.zshrc" # Quick edit the zsh config file.
