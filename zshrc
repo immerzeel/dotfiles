@@ -32,3 +32,6 @@ unsetopt correctall
 # Usage: mmv *.snippets.txt *.snippets
 autoload -U zmv
 alias mmv='noglob zmv -W'
+
+# Add FZF keybindings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
